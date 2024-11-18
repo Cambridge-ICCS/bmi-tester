@@ -69,7 +69,7 @@ def test_put_get(initialized_bmi):
 
         # Get the variables type
         ty = np.dtype(initialized_bmi.get_var_type(var_name))
-        # Generate some systematic base cases for this type
+        # Generate some systematic test cases for this variable's type
         zero = np.zeros(1, dtype=ty)
         one  = np.ones(1, dtype=ty)
         for val in [zero, one, one + one]:
