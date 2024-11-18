@@ -60,7 +60,7 @@ def test_get_var_units(initialized_bmi, var_name):
     assert isinstance(units, str)
     assert check_unit_is_valid(units)
 
-def test_put_get(initialized_bmi):
+def test_set_get_interaction(initialized_bmi):
     """Test fundmanetal state behaviour of every output variable which is also an input variable:"""
 
     # Take the intersection of output and input vars
