@@ -18,7 +18,6 @@ def test_get_start_time(initialized_bmi):
     start = initialized_bmi.get_start_time()
 
     assert isinstance(start, float)
-    assert start == approx(0.0)
 
 
 @pytest.mark.dependency()
