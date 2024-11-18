@@ -76,9 +76,11 @@ def test_put_get(initialized_bmi):
           # Test set-get behaviour
           # (i.e., setting a value then getting it produces the same result)
           initialized_bmi.set_value(var_name, val)
-          assert initialized_bmi.get_value(var_name) == val
+          val_out = initialized_bmi.get_value(var_name)
+          assert val_out == val
 
           # Test set-set-get behaviour
           # (i.e., setting is idempotent; setting twice has no visible effect)
           initialized_bmi.set_value(var_name, val)
-          assert initialized_bmi.get_value(var_name) == val
+          val_out_again = initialized_bmi.get_value(var_name)
+          assert val_out_again == val_out
