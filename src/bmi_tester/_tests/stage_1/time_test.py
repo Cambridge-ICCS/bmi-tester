@@ -62,6 +62,11 @@ def test_get_end_time(initialized_bmi):
     """Test that there is a stop time."""
     start = initialized_bmi.get_start_time()
     stop = initialized_bmi.get_end_time()
+    time_step = initialized_bmi.get_time_step()
 
     assert isinstance(stop, (int, float))
-    assert stop >= start
+    assert ((time_step > 0 & start <= stop)
+          # or an inverse model
+         | (time_step < 0 & stop <= start)
+          # or an instantaneous model
+         | (time_step == 0 & start == stop))
